@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Provider } from "react-redux";
@@ -10,6 +10,7 @@ import thunk from "redux-thunk";
 import rootReducer from "./rootReducer";
 
 import HomePage from "./components/HomePage";
+import Header from "./components/Header";
 const middleware = [logger, thunk];
 
 const store = createStore(
@@ -22,14 +23,11 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-              </header>
-              <Switch>
-                 <Route exact path="/" component={HomePage}/>
-              </Switch>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+          </Switch>
         </div>
       </Router>
     </Provider>

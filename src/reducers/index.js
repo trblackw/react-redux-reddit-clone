@@ -2,17 +2,17 @@ import { FETCH_POSTS } from "../actions/index";
 
 const initialState = {
   posts: [],
-  pageLoaded: false
+  images: []
 };
 
 export default function(state = initialState, action) {
-  const { type, data } = action;
+  const { type, posts, image } = action;
   switch (type) {
     case FETCH_POSTS:
       return {
         ...state,
-        posts: data,
-        pageLoaded: true
+        posts,
+        images: image
       };
     default:
       return state;
