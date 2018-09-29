@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu+Condensed');
+
+body {
+   font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+   font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.time {
+   font-size: x-small;
+}
+
+span.prefix {
+   color: red;
+}
+
 .App {
   text-align: center;
 }
@@ -9,7 +27,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
