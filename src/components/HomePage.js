@@ -6,8 +6,6 @@ import { fetchPosts } from "../actions/index";
 import styled from "styled-components";
 import Post from "./Post";
 
-import { generateHTML } from "../utils/helpers";
-
 class HomePage extends Component {
   componentDidMount() {
     const { fetchPosts } = this.props;

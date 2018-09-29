@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../img/reddit-logo.png";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import Search from "./Search";
 
 const Nav = () => (
   <NavUl>
@@ -15,6 +16,9 @@ const Nav = () => (
     </li>
     <li>
       <NavLink to="#">other stuff</NavLink>
+    </li>
+    <li>
+      <Search />
     </li>
   </NavUl>
 );
@@ -39,6 +43,7 @@ const Header = styled.header`
 `;
 
 const NavUl = styled.ul`
+  float: right;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

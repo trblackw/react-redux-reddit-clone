@@ -18,7 +18,9 @@ export const generateHTML = data => {
       author,
       subreddit,
       created_utc,
-      id
+      id,
+      score,
+      num_comments
     } = post;
     return (
       <PostContainer key={id}>
@@ -27,32 +29,30 @@ export const generateHTML = data => {
             <strong>{title}</strong>
           </a>
         </h3>
-        <ul
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            listStyle: "none"
-          }}
-        >
-          <li style={{ marginRight: "1em" }}>
+        <StyledUl>
+          <li>
             <small>{`/u/${author}`}</small>
           </li>
           <li>
             <small>{`/r/${subreddit}`}</small>
           </li>
-        </ul>
+          <li>
+            <small>Score: {score}</small>
+          </li>
+        </StyledUl>
         <span className="time">{dateFormatter(created_utc)}</span>
         <div
           style={{ justifyContent: "center", margin: "0.8em auto", padding: 0 }}
         >
-          <img
-            src={thumbnail}
-            alt={`${title}'s thumbnail`}
-            height={thumbnail_height}
-            width={thumbnail_width}
-            style={{ border: "2px solid red" }}
-          />
+          {thumbnail ? (
+            <img
+              src={thumbnail}
+              alt={`${title}'s thumbnail`}
+              height={thumbnail_height}
+              width={thumbnail_width}
+              style={{ border: "2px solid red" }}
+            />
+          ) : null}
         </div>
       </PostContainer>
     );
@@ -60,7 +60,17 @@ export const generateHTML = data => {
 };
 
 const PostContainer = styled.div`
-   padding: 0 1em;
-   border: 1px solid whitesmoke;
-   background: black;
-`
+  padding: 0 1em;
+  border: 1px solid whitesmoke;
+  background: black;
+`;
+
+const StyledUl = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style: none;
+  li {
+    margin-right: 1em;
+  }
+`;
