@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchPosts } from "../actions/index";
 import styled from "styled-components";
-import Post from "./Post";
+import HomePosts from "./HomePosts";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -17,7 +17,7 @@ class HomePage extends Component {
     const { posts } = this.props;
     return (
       <HomeContainer>
-        <Post posts={posts} />
+        <HomePosts posts={posts} />
       </HomeContainer>
     );
   }
@@ -25,7 +25,6 @@ class HomePage extends Component {
 
 const mapStateToProps = state => ({
   posts: state.posts.posts
-  // images: state.images
 });
 
 const mapDispatchToProps = dispatch =>

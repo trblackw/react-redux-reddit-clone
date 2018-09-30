@@ -3,16 +3,14 @@ import { generateHTML } from "../utils/helpers";
 import styled from "styled-components";
 
 export default ({ posts }) => {
-  return (
-      <PostGrid>{generateHTML(posts)}</PostGrid>
-  );
+  return <PostGrid>{generateHTML(posts)}</PostGrid>;
 };
 
 const PostGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, .7fr);
   grid-gap: 1em;
+  grid-template-columns: repeat(5, 0.7fr);
+  grid-template-rows: repeat(5, 0.7fr);
   padding: 2em;
   margin: 0 auto;
   overflow-x: scroll;

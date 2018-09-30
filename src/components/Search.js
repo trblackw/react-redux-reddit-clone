@@ -5,12 +5,13 @@ import styled from "styled-components";
 import { fetchSubreddit } from "../actions/index";
 
 class Search extends Component {
-  handleSearch = () => {
+   handleSearch = () => {
+     //no validation yet
     const { fetchSubreddit } = this.props;
-
-
-    fetchSubreddit(this.search.value)
+     fetchSubreddit(this.search.value);
+     this.search.value = '';
   };
+   
   render() {
     return (
       <div>

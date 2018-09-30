@@ -31,3 +31,8 @@ span.prefix {
   padding: 20px;
   color: white;
 }
+
+a {
+   color: black;
+   text-decoration: none;
+}
