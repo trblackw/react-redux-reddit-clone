@@ -7,12 +7,12 @@ import Search from "./Search";
 const Nav = () => (
   <NavUl>
     <li>
-      <NavLink to="/" activeStyle={{ color: "red" }}>
+      <NavLink exact to="/" activeStyle={{ color: "red" }}>
         Home
       </NavLink>
     </li>
     <li>
-      <NavLink to="#">Discover</NavLink>
+      <NavLink to="/discover" activeStyle={{ color: "red" }}>Discover</NavLink>
     </li>
     <li>
       <NavLink to="#">other stuff</NavLink>

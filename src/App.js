@@ -11,6 +11,7 @@ import rootReducer from "./rootReducer";
 
 import HomePage from "./components/HomePage";
 import Header from "./components/Header";
+import Browse from "./components/Browse";
 const middleware = [logger, thunk];
 
 const store = createStore(
@@ -27,6 +28,7 @@ const App = () => {
           <Header />
           <Switch>
             <Route exact path="/" component={HomePage} />
+            <Route path="/discover" component={Browse} />
           </Switch>
         </div>
       </Router>
