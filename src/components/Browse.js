@@ -3,6 +3,8 @@ import React, { Component } from "react";
 // import { bindActionCreators } from "redux";
 // import { fetchAllSubreddits } from "../actions/index";
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import { fetchSubreddit } from "../actions/index";
 
 export default class Browse extends Component {
   state = {
@@ -12,12 +14,14 @@ export default class Browse extends Component {
     const res = await fetch(
       "https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits.json?limit=100"
     );
-    const wikiPage = await res.json();
+     const wikiPage = await res.json();
     const subreddits = [
       ...new Set(wikiPage.data.content_html.match(/\/r\/\w+/gi)).keys()
     ];
+     
+     const alphabetizedSubs = subreddits.map(sub => sub.split('/r/')).map(sub => sub[1]).sort().map(sub => `/r/${sub}`)
     this.setState({
-      subreddits: subreddits.slice(0, 500)
+      subreddits: alphabetizedSubs.slice(0, 100)
     });
   }
   render() {
