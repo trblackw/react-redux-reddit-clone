@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { TiArrowUpOutline } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 export const dateFormatter = timeStamp => {
   const date = new Date(timeStamp * 1000).toLocaleDateString().split("/");
@@ -24,48 +25,48 @@ export const generateHTML = data => {
       num_comments
     } = post;
     return (
-      <PostContainer key={id}>
-        <div id="innerContainer">
-          <h3>
-            <a href={`https://reddit.com${permalink}`} target="_blank">
-              <strong>{title}</strong>
-            </a>
-          </h3>
-          <StyledUl>
-            <li>
-              <small id="sub">{`/r/${subreddit}`}</small>
-            </li>
-            <li>
-              <small id="username">{`/u/${author}`}</small>
-            </li>
-            <li>
-              <small>
-                <span id="arrow">
-                  <TiArrowUpOutline />
-                </span>
-                {ups}
-              </small>
-            </li>
-          </StyledUl>
-          <span className="time">{dateFormatter(created_utc)}</span>
-          <div
-            style={{
-              justifyContent: "center",
-              margin: "0.8em auto",
-              padding: 0
-            }}
-          >
-            {thumbnail ? (
-              <img
-                src={thumbnail}
-                alt={`${title}'s thumbnail`}
-                height={thumbnail_height}
-                width={thumbnail_width}
-                style={{ border: "2px solid red" }}
-              />
-            ) : null}
+       <PostContainer key={id}>
+          <div id="innerContainer">
+            <h3>
+              <a href={`https://reddit.com${permalink}`} target="_blank">
+                <strong>{title}</strong>
+              </a>
+            </h3>
+            <StyledUl>
+              <li>
+                <small id="sub">{`/r/${subreddit}`}</small>
+              </li>
+              <li>
+                <small id="username">{`/u/${author}`}</small>
+              </li>
+              <li>
+                <small>
+                  <span id="arrow">
+                    <TiArrowUpOutline />
+                  </span>
+                  {ups}
+                </small>
+              </li>
+            </StyledUl>
+            <span className="time">{dateFormatter(created_utc)}</span>
+            <div
+              style={{
+                justifyContent: "center",
+                margin: "0.8em auto",
+                padding: 0
+              }}
+            >
+              {thumbnail ? (
+                <img
+                  src={thumbnail}
+                  alt={`${title}'s thumbnail`}
+                  height={thumbnail_height}
+                  width={thumbnail_width}
+                  style={{ border: "2px solid red" }}
+                />
+              ) : null}
+            </div>
           </div>
-        </div>
       </PostContainer>
     );
   });

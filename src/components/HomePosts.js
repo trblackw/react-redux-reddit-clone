@@ -9,8 +9,8 @@ export default ({ posts }) => {
 const PostGrid = styled.div`
   display: grid;
   grid-gap: 1em;
-  grid-template-columns: repeat(5, 0.7fr);
-  grid-template-rows: repeat(5, 0.7fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, .5fr);
   padding: 2em;
   margin: 0 auto;
   overflow-x: scroll;
