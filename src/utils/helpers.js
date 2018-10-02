@@ -25,7 +25,8 @@ export const generateHTML = data => {
       num_comments
     } = post;
     return (
-       <PostContainer key={id}>
+      <PostContainer key={id}>
+        <Link to="/:id">
           <div id="innerContainer">
             <h3>
               <a href={`https://reddit.com${permalink}`} target="_blank">
@@ -67,6 +68,7 @@ export const generateHTML = data => {
               ) : null}
             </div>
           </div>
+        </Link>
       </PostContainer>
     );
   });

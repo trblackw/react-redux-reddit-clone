@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { composeWithDevTools } from "redux-devtools-extension";
+// import promiseMiddleware from "redux-promise";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import rootReducer from "./rootReducer";
@@ -12,7 +13,7 @@ import rootReducer from "./rootReducer";
 import HomePage from "./components/HomePage";
 import Header from "./components/Header";
 import Browse from "./components/Browse";
-import Post from './components/Post'
+import Post from "./components/Post";
 const middleware = [logger, thunk];
 
 const store = createStore(
