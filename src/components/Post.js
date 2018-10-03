@@ -6,13 +6,18 @@ import { bindActionCreators } from "redux";
 
 class Post extends Component {
   componentDidMount() {
-    const { fetchSinglePost } = this.props;
+     const { fetchSinglePost, match } = this.props;
+     console.log(this.props)
     //  fetchSinglePost(this.props.match.id);
-    fetchSinglePost(this.props.match.id);
+   //  fetchSinglePost(this.props.match.id);
+
+   //   fetch(`http://redd.it${match.url}`).then(res => console.log(res))
   }
   render() {
     console.log(this.props);
-    return <div />;
+     return <div>
+       POST
+    </div>
   }
 }
 

@@ -28,9 +28,9 @@ export const generateHTML = data => {
       <PostContainer key={id}>
           <div id="innerContainer">
             <h3>
-              <a href={`https://reddit.com${permalink}`} target="_blank">
+              <Link to={`/${id}`}>
                 <strong>{title}</strong>
-              </a>
+              </Link>
             </h3>
             <StyledUl>
               <li>
