@@ -1,15 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { fetchSinglePost } from "../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Post = ({ post }) => {
-  return (
-    <div>
-      <h1>{post.title}</h1>
-      <div>post info</div>
-    </div>
-  );
-};
+class Post extends Component {
+  componentDidMount() {
+    const { fetchSinglePost } = this.props;
+    //  fetchSinglePost(this.props.match.id);
+    fetchSinglePost(this.props.match.id);
+  }
+  render() {
+    console.log(this.props);
+    return <div />;
+  }
+}
 
-Post.propTypes = {};
+const mapStateToProps = state => ({
+  posts: state.post
+});
 
-export default Post;
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ fetchSinglePost }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Post);
