@@ -5,16 +5,16 @@ import styled from "styled-components";
 import { fetchSubreddit } from "../actions/index";
 
 class Search extends Component {
-   handleSearch = () => {
-     //no validation yet
+  handleSearch = () => {
+    //no validation yet
     const { fetchSubreddit } = this.props;
-     fetchSubreddit(this.search.value);
-     this.search.value = '';
+    fetchSubreddit(this.search.value);
+    this.search.value = "";
   };
-   
+
   render() {
     return (
-      <div>
+      <SearchForm onSubmit={e => e.preventDefault()}>
         <label
           htmlFor="sub-search"
           style={{ fontSize: "xx-small", color: "black" }}
@@ -27,7 +27,7 @@ class Search extends Component {
           name="sub-search"
         />
         <button onClick={this.handleSearch}>go!</button>
-      </div>
+      </SearchForm>
     );
   }
 }
@@ -44,3 +44,19 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Search);
+
+const SearchForm = styled.form`
+  box-sizing: border-box;
+  display: inline;
+  margin: 0;
+  padding: 0;
+
+  input {
+    padding: 0.5em;
+    border-radius: 5px;
+    display: inline;
+  }
+  button {
+     float: right;
+  }
+`;

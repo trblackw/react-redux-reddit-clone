@@ -1,26 +1,27 @@
-import React from "react";
-import logo from "../img/reddit-logo.png";
+import React, { Fragment } from "react";
+import logo from "../img/reddit-logo.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import Search from "./Search";
 
 const Nav = () => (
-  <NavUl>
-    <li>
-      <NavLink exact to="/" activeStyle={{ color: "red" }}>
-        Home
-      </NavLink>
-    </li>
-    <li>
-      <NavLink to="/discover" activeStyle={{ color: "red" }}>Discover</NavLink>
-    </li>
-    <li>
-      <NavLink to="#">other stuff</NavLink>
-    </li>
-    <li>
-      <Search />
-    </li>
-  </NavUl>
+  <Fragment>
+    <NavUl>
+      <li>
+        <NavLink exact to="/" activeStyle={{ color: "red" }}>
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/discover" activeStyle={{ color: "red" }}>
+          Discover
+        </NavLink>
+      </li>
+      <li>
+        <Search />
+      </li>
+    </NavUl>
+  </Fragment>
 );
 
 export default () => {
@@ -35,11 +36,13 @@ export default () => {
 };
 
 const Header = styled.header`
-  background-color: #eee;
+  background-color: hsl(0, 0%, 31%);
   height: auto;
   padding: 20px;
   color: white;
   border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
 `;
 
 const NavUl = styled.ul`

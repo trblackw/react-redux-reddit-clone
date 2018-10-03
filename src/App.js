@@ -4,6 +4,7 @@ import "./App.css";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+// import {Router, Link} from '@reach/router';
 import { composeWithDevTools } from "redux-devtools-extension";
 // import promiseMiddleware from "redux-promise";
 import logger from "redux-logger";
@@ -31,7 +32,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/discover" component={Browse} />
-            <Route path="/:id" component={Post} />
+            <Route path="/:id" component={Post}  />
           </Switch>
         </div>
       </Router>

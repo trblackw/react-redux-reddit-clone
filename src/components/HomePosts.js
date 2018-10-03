@@ -3,6 +3,7 @@ import { generateHTML } from "../utils/helpers";
 import styled from "styled-components";
 
 export default ({ posts }) => {
+   console.log(posts.map(post => post.id));
   return <PostGrid>{generateHTML(posts)}</PostGrid>;
 };
 
